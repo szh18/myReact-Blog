@@ -13,6 +13,8 @@ function App() {
         <p>
           <Link to="/">My Blog</Link> &copy; {new Date().getFullYear()}
           &nbsp;·&nbsp;
+          <Link to="/">首页</Link>
+          &nbsp;·&nbsp;
           <a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a>
         </p>
       </footer>

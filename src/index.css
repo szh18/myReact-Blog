@@ -1,15 +1,23 @@
-@import 'highlight.js/styles/github.css';
+@import 'highlight.js/styles/github-dark-dimmed.css';
 
 :root {
-  --max-width: 800px;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-bg: #ffffff;
-  --color-text: #1a1a2e;
-  --color-text-secondary: #64748b;
-  --color-border: #e2e8f0;
-  --color-bg-secondary: #f8fafc;
-  --radius: 8px;
+  --max-width: 860px;
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --color-primary-hover: #6d28d9;
+  --color-accent: #f59e0b;
+  --color-bg: #0f0f23;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-hover: rgba(255, 255, 255, 0.10);
+  --color-text: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-card-bg: rgba(255, 255, 255, 0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -19,27 +27,78 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--color-text);
   background: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.25), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(124, 58, 237, 0.12), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 50%, rgba(245, 158, 11, 0.06), transparent);
+  background-attachment: fixed;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Animated background dots */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px, 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-light);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 a:hover {
-  color: var(--color-primary-hover);
-  text-decoration: underline;
+  color: #c4b5fd;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 code {
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas, monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #fff;
 }
