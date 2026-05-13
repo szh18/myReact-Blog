@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blog</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          var base = document.querySelector('script[type="module"]')
+            ? new URL(import.meta.env.BASE_URL || '/', location.origin).pathname
+            : '/';
+          var clean = redirect.replace(new RegExp('^' + base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), '/');
+          clean = clean.replace(/\/$/, '') || '/';
+          if (clean !== '/') {
+            history.replaceState(null, '', base.replace(/\/$/, '') + clean);
+          }
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
