@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>My Blog</title>
+  <link>https://szh18.github.io/myReact-Blog</link>
+  <description>一个基于 React + Vite 构建的个人博客</description>
+  <language>zh-CN</language>
+  <atom:link href="https://szh18.github.io/myReact-Blog/rss.xml" rel="self" type="application/rss+xml"/>
+  
+  <item>
+    <title><![CDATA[快速上手 — 如何写一篇新文章]]></title>
+    <link>https://szh18.github.io/myReact-Blog/post/getting-started</link>
+    <guid isPermaLink="true">https://szh18.github.io/myReact-Blog/post/getting-started</guid>
+    <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+    <category><![CDATA[教程]]></category>
+    <description><![CDATA[学习如何在博客中添加新文章，了解 frontmatter 的用法。]]></description>
+  </item>
+  <item>
+    <title><![CDATA[Hello World — 我的第一篇博客]]></title>
+    <link>https://szh18.github.io/myReact-Blog/post/hello-world</link>
+    <guid isPermaLink="true">https://szh18.github.io/myReact-Blog/post/hello-world</guid>
+    <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+    <category><![CDATA[技术]]></category>
+    <description><![CDATA[这是博客的第一篇文章，介绍了如何使用 React + Vite 构建静态博客。]]></description>
+  </item>
+</channel>
+</rss>
