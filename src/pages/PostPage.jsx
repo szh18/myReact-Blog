@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { getPostBySlug } from '../utils/posts';
 import MarkdownRenderer from '../components/MarkdownRenderer';
-import GiscusComments from '../components/GiscusComments';
+
 import TagBadge from '../components/TagBadge';
 
 function PostPage() {
@@ -31,7 +31,6 @@ function PostPage() {
         </div>
       </header>
       <MarkdownRenderer content={post.content} />
-      <GiscusComments />
     </article>
   );
 }

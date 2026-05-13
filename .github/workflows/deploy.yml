@@ -39,10 +39,8 @@ jobs:
         env:
           BASE_URL: /${{ steps.repo.outputs.name }}/
           VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ steps.repo.outputs.name }}
-          VITE_GISCUS_REPO: ${{ secrets.GISCUS_REPO }}
-          VITE_GISCUS_REPO_ID: ${{ secrets.GISCUS_REPO_ID }}
-          VITE_GISCUS_CATEGORY: ${{ secrets.GISCUS_CATEGORY }}
-          VITE_GISCUS_CATEGORY_ID: ${{ secrets.GISCUS_CATEGORY_ID }}
+
+
         run: npm run build
 
       - name: Deploy to GitHub Pages

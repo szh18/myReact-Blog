@@ -6,15 +6,6 @@ const config = {
     : 'http://localhost:5173',
 
   postsPerPage: 5,
-
-  giscus: {
-    repo: import.meta.env.VITE_GISCUS_REPO || '',
-    repoId: import.meta.env.VITE_GISCUS_REPO_ID || '',
-    category: import.meta.env.VITE_GISCUS_CATEGORY || 'Announcements',
-    categoryId: import.meta.env.VITE_GISCUS_CATEGORY_ID || '',
-    mapping: 'pathname',
-    theme: 'light',
-  },
 };
 
 export default config;
