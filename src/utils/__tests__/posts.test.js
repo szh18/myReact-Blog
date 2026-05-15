@@ -13,9 +13,10 @@ describe('posts', () => {
   describe('getAllPosts', () => {
     it('应该返回所有文章并按日期降序排列', () => {
       const posts = getAllPosts();
-      expect(posts).toHaveLength(2);
-      expect(posts[0].title).toBe('快速上手 — 如何写一篇新文章');
-      expect(posts[1].title).toBe('Hello World — 我的第一篇博客');
+      expect(posts).toHaveLength(3);
+      expect(posts[0].title).toBe('Vue 2 与 Vue 3 的核心区别');
+      expect(posts[1].title).toBe('快速上手 — 如何写一篇新文章');
+      expect(posts[2].title).toBe('Hello World — 我的第一篇博客');
     });
   });
 
@@ -58,6 +59,7 @@ describe('posts', () => {
       const cats = getAllCategories();
       expect(cats).toContain('技术');
       expect(cats).toContain('教程');
+      expect(cats).toContain('前端');
     });
   });
 
@@ -68,6 +70,10 @@ describe('posts', () => {
       expect(tags).toContain('Vite');
       expect(tags).toContain('Markdown');
       expect(tags).toContain('教程');
+      expect(tags).toContain('Vue');
+      expect(tags).toContain('Vue3');
+      expect(tags).toContain('JavaScript');
+      expect(tags).toContain('框架对比');
     });
   });
 
@@ -76,13 +82,13 @@ describe('posts', () => {
       const result = getPaginatedPosts(1, 1);
       expect(result.posts).toHaveLength(1);
       expect(result.currentPage).toBe(1);
-      expect(result.totalPages).toBe(2);
-      expect(result.totalPosts).toBe(2);
+      expect(result.totalPages).toBe(3);
+      expect(result.totalPosts).toBe(3);
     });
 
     it('应该将无效页码限制在有效范围内', () => {
       const result = getPaginatedPosts(999, 2);
-      expect(result.currentPage).toBe(1);
+      expect(result.currentPage).toBe(2);
     });
   });
 });
