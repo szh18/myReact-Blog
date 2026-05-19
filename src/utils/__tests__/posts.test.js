@@ -13,10 +13,11 @@ describe('posts', () => {
   describe('getAllPosts', () => {
     it('应该返回所有文章并按日期降序排列', () => {
       const posts = getAllPosts();
-      expect(posts).toHaveLength(3);
-      expect(posts[0].title).toBe('Vue 2 与 Vue 3 的核心区别');
-      expect(posts[1].title).toBe('快速上手 — 如何写一篇新文章');
-      expect(posts[2].title).toBe('Hello World — 我的第一篇博客');
+      expect(posts).toHaveLength(4);
+      expect(posts[0].title).toBe('Claude Code 双 Skill 完全指南 — superpowers + gstack 全部技能详解');
+      expect(posts[1].title).toBe('Vue 2 与 Vue 3 的核心区别');
+      expect(posts[2].title).toBe('快速上手 — 如何写一篇新文章');
+      expect(posts[3].title).toBe('Hello World — 我的第一篇博客');
     });
   });
 
@@ -60,6 +61,7 @@ describe('posts', () => {
       expect(cats).toContain('技术');
       expect(cats).toContain('教程');
       expect(cats).toContain('前端');
+      expect(cats).toContain('工具');
     });
   });
 
@@ -73,7 +75,10 @@ describe('posts', () => {
       expect(tags).toContain('Vue');
       expect(tags).toContain('Vue3');
       expect(tags).toContain('JavaScript');
-      expect(tags).toContain('框架对比');
+      expect(tags).toContain('Claude Code');
+      expect(tags).toContain('Skill');
+      expect(tags).toContain('gstack');
+      expect(tags).toContain('AI编程');
     });
   });
 
@@ -82,8 +87,8 @@ describe('posts', () => {
       const result = getPaginatedPosts(1, 1);
       expect(result.posts).toHaveLength(1);
       expect(result.currentPage).toBe(1);
-      expect(result.totalPages).toBe(3);
-      expect(result.totalPosts).toBe(3);
+      expect(result.totalPages).toBe(4);
+      expect(result.totalPosts).toBe(4);
     });
 
     it('应该将无效页码限制在有效范围内', () => {
